@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 832 440" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc>blockdiag {
+  orientation = portrait;
+  node_width = 192;
+
+  "Ubuntu 18.04" -&gt; "nvidia/cuda";
+  "nvidia/cuda" -&gt; "google/base-deps";
+  "google/base-deps" -&gt; "google/swift-jupyter";
+
+  "google/swift-jupyter" -&gt; "google/swift-jupyter-\\nkernel-gateway" [style = dashed];
+  "google/swift-jupyter-\\nkernel-gateway" [style = dashed];
+
+  "nvidia/cuda" -&gt; "ctmnt/base-for-s4tf" [style = dotted];
+  "ctmnt/base-for-s4tf" -&gt; "ctmnt/swift-jupyter" [style = dotted];
+  "ctmnt/swift-jupyter" -&gt; "ctmnt/swift-jupyter-scipy" [style = dotted];
+
+  "ctmnt/base-for-s4tf" [style = dotted];
+  "ctmnt/swift-jupyter" [style = dotted];
+  "ctmnt/swift-jupyter-scipy" [style = dotted];
+
+  "Ubuntu 18.04" -&gt; "jupyter/base-notebook";
+  "jupyter/base-notebook" -&gt; "jupyter/minimal-notebook";
+  "jupyter/minimal-notebook" -&gt; "jupyter/scipy-notebook";
+  "jupyter/scipy-notebook" -&gt; "jupyter/tensorflow-notebook";
+
+  "google/base-deps" -&gt; "ctmnt/base-for-s4tf" [folded, dir=both, hstyle=generalization];
+  "google/swift-jupyter" -&gt; "ctmnt/swift-jupyter" [folded, dir=both, hstyle=generalization];
+  "google/swift-jupyter-\\nkernel-gateway" -&gt; "ctmnt/swift-jupyter-scipy" [folded, dir=both, hstyle=generalization];
+  "ctmnt/swift-jupyter-scipy" -&gt; "jupyter/tensorflow-notebook" [folded, dir=both, hstyle=generalization];
+}
+</desc>
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="67" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="67" y="126" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="579" y="126" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="67" y="206" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="323" y="206" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="67" y="286" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="67" y="366" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="323" y="286" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="323" y="366" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="579" y="206" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="579" y="286" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="579" y="366" />
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="192" x="64" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="72" x="160.0" y="65">Ubuntu 18.04</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="192" x="64" y="120" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="58" x="160.0" y="146">nvidia/cuda</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="192" x="576" y="120" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="116" x="672.0" y="146">jupyter/base-notebook</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="192" x="64" y="200" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="91" x="160.5" y="226">google/base-deps</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" stroke-dasharray="2" width="192" x="320" y="200" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="105" x="416.5" y="226">ctmnt/base-for-s4tf</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="192" x="64" y="280" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="103" x="160.5" y="307">google/swift-jupyter</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" stroke-dasharray="4" width="192" x="64" y="360" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="188" x="160.0" y="380">google/swift-jupyter-\nkernel-gatew</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="12" x="160.0" y="393">ay</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" stroke-dasharray="2" width="192" x="320" y="280" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="101" x="416.5" y="306">ctmnt/swift-jupyter</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" stroke-dasharray="2" width="192" x="320" y="360" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="132" x="416.0" y="386">ctmnt/swift-jupyter-scipy</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="192" x="576" y="200" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="131" x="672.5" y="226">jupyter/minimal-notebook</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="192" x="576" y="280" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="118" x="672.0" y="306">jupyter/scipy-notebook</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="192" x="576" y="360" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="145" x="672.5" y="386">jupyter/tensorflow-notebook</text>
+  <path d="M 160 80 L 160 112" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="160,119 156,112 164,112 160,119" stroke="rgb(0,0,0)" />
+  <path d="M 160 80 L 160 100" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 160 100 L 672 100" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 672 100 L 672 112" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="672,119 668,112 676,112 672,119" stroke="rgb(0,0,0)" />
+  <path d="M 160 160 L 160 192" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="160,199 156,192 164,192 160,199" stroke="rgb(0,0,0)" />
+  <path d="M 160 160 L 160 180" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 160 180 L 416 180" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 416 180 L 416 192" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="416,199 412,192 420,192 416,199" stroke="rgb(0,0,0)" />
+  <path d="M 160 240 L 160 272" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="160,279 156,272 164,272 160,279" stroke="rgb(0,0,0)" />
+  <path d="M 264 220 L 312 220" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="257,220 264,216 264,224 257,220" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="319,220 312,216 312,224 319,220" stroke="rgb(0,0,0)" />
+  <path d="M 160 320 L 160 352" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <polygon fill="rgb(0,0,0)" points="160,359 156,352 164,352 160,359" stroke="rgb(0,0,0)" />
+  <path d="M 264 300 L 312 300" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="257,300 264,296 264,304 257,300" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="319,300 312,296 312,304 319,300" stroke="rgb(0,0,0)" />
+  <path d="M 264 380 L 312 380" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="257,380 264,376 264,384 257,380" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="319,380 312,376 312,384 319,380" stroke="rgb(0,0,0)" />
+  <path d="M 416 240 L 416 272" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="416,279 412,272 420,272 416,279" stroke="rgb(0,0,0)" />
+  <path d="M 416 320 L 416 352" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="416,359 412,352 420,352 416,359" stroke="rgb(0,0,0)" />
+  <path d="M 520 380 L 568 380" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="513,380 520,376 520,384 513,380" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="575,380 568,376 568,384 575,380" stroke="rgb(0,0,0)" />
+  <path d="M 672 160 L 672 192" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="672,199 668,192 676,192 672,199" stroke="rgb(0,0,0)" />
+  <path d="M 672 240 L 672 272" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="672,279 668,272 676,272 672,279" stroke="rgb(0,0,0)" />
+  <path d="M 672 320 L 672 352" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="672,359 668,352 676,352 672,359" stroke="rgb(0,0,0)" />
+</svg>

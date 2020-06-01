@@ -1,3 +1,12 @@
 # Swift for Tensorflow Docker stacks
 
-[![](http://interactive.blockdiag.com/image?compression=deflate&encoding=base64&src=eJydkEFuwjAQRfecYuS9m4JYFKH2Fl0VVDnxJBiMJ7InRFHVu9dtqEjaEAW289__8nNqKTtoowr4mAGQN-hYsSEHz1CSZ68Mr2PiSON7bTTvYjBfLdazeBSvaeW4gvnTw-NSgHwB4U4mriVZpZX47vUOP0RBVFhMUhVQaixDi_27dtlQm5zlviobRt_j-8nVjty4A3qHVhaKsVaNgLfAjcUoo1XYod62QneXAQZlMz46bq1y8jIsOe-2ifncHiYvE39ERyYGvmQgkCEzZTN96JcfnRv9qcv-Vd3pVrc--zZ-ksfnF8FuGJ0)](http://interactive.blockdiag.com/?compression=deflate&src=eJydkEFuwjAQRfecYuS9m4JYFKH2Fl0VVDnxJBiMJ7InRFHVu9dtqEjaEAW289__8nNqKTtoowr4mAGQN-hYsSEHz1CSZ68Mr2PiSON7bTTvYjBfLdazeBSvaeW4gvnTw-NSgHwB4U4mriVZpZX47vUOP0RBVFhMUhVQaixDi_27dtlQm5zlviobRt_j-8nVjty4A3qHVhaKsVaNgLfAjcUoo1XYod62QneXAQZlMz46bq1y8jIsOe-2ifncHiYvE39ERyYGvmQgkCEzZTN96JcfnRv9qcv-Vd3pVrc--zZ-ksfnF8FuGJ0)
+## Overview
+
+![Swift for Tensorflow Docker image stack hierarchy](docker-image-hierarchy.svg)
+
+`blockdiag -T svg docker-image-hierarchy.diag`
+
+## Project goals
+
+1. Replicate all of the functionality of Google's Swift for Tensorflow images (shown on the left in [the overview diagram](#project-goals))
+1. Replicate some of the functionality (the library support, not additional application support) of Jupyter's Docker Stacks images (shown on the right in [the overview diagram](#project-goals))
