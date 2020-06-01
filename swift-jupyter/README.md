@@ -1,6 +1,6 @@
 # ctmnt/swift-jupyter Docker image
 
-This image is currently a mirror of [google/swift-jupyter's Dockerfile](https://github.com/google/swift-jupyter/blob/master/docker/Dockerfile) and builds on the [base-for-s4tf](../base-for-s4tf) image. Build that one first.
+This image is currently based on [google/swift-jupyter's Dockerfile](https://github.com/google/swift-jupyter/blob/master/docker/Dockerfile) and builds on the [base-for-s4tf](../base-for-s4tf) image. Build that one first.
 
 ## Requirements
 
