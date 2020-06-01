@@ -1,6 +1,6 @@
 # ctmnt/base-for-s4tf Docker image
 
-This is the base image upon which all the Swift images are built. It is currently a mirror of [tensorflow/swift's base-deps Dockerfile](https://github.com/google/swift-jupyter/blob/master/docker/Dockerfile).
+This is the base image upon which all the Swift images are built. It is currently based on [tensorflow/swift's base-deps Dockerfile](https://github.com/google/swift-jupyter/blob/master/docker/Dockerfile).
 
 ## Building the image
 
