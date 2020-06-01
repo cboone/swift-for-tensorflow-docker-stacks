@@ -1,29 +1,79 @@
 blockdiag {
   orientation = portrait;
   node_width = 192;
+  node_height = 60;
+
+  group {
+    color = none;
+
+    "Ubuntu 18.04";
+    "nvidia/cuda";
+
+    group {
+      color = none;
+
+      "google/base-deps";
+      "google/swift-jupyter";
+
+      group {
+        color = none;
+
+        orientation = portrait;
+        "google/swift-jupyter-
+kernel-gateway" [style = dashed];
+        "Google Colab";
+      }
+    }
+
+    group {
+      color = none;
+
+      "ctmnt/base-for-s4tf" [style = dotted];
+      "ctmnt/swift-jupyter" [style = dotted];
+
+      group {
+        color = none;
+
+        "ctmnt/swift-jupyter-scipy" [style = dotted];
+        "ctmnt/swift-jupyter-colab" [style = dotted];
+      }
+    }
+
+    group {
+      color = none;
+
+      "jupyter/base-notebook";
+      "jupyter/minimal-notebook";
+      "jupyter/scipy-notebook";
+      "jupyter/tensorflow-notebook";
+    }
+  }
 
   "Ubuntu 18.04" -> "nvidia/cuda";
+  "Ubuntu 18.04" -> "jupyter/base-notebook";
+
   "nvidia/cuda" -> "google/base-deps";
-  "google/base-deps" -> "google/swift-jupyter";
-
-  "google/swift-jupyter" -> "google/swift-jupyter-\\nkernel-gateway" [style = dashed];
-  "google/swift-jupyter-\\nkernel-gateway" [style = dashed];
-
   "nvidia/cuda" -> "ctmnt/base-for-s4tf" [style = dotted];
+
+  "google/base-deps" -> "google/swift-jupyter";
+  "google/base-deps" -> "ctmnt/base-for-s4tf" [folded, dir=both, hstyle=generalization];
+
+  "google/swift-jupyter" -> "google/swift-jupyter-
+kernel-gateway" [style = dashed];
+  "google/swift-jupyter" -> "ctmnt/swift-jupyter" [folded, dir=both, hstyle=generalization];
+
+  "google/swift-jupyter-
+kernel-gateway" -> "ctmnt/swift-jupyter-scipy" [folded, dir=both, hstyle=generalization];
+
   "ctmnt/base-for-s4tf" -> "ctmnt/swift-jupyter" [style = dotted];
   "ctmnt/swift-jupyter" -> "ctmnt/swift-jupyter-scipy" [style = dotted];
 
-  "ctmnt/base-for-s4tf" [style = dotted];
-  "ctmnt/swift-jupyter" [style = dotted];
-  "ctmnt/swift-jupyter-scipy" [style = dotted];
+  "ctmnt/swift-jupyter-scipy" -> "ctmnt/swift-jupyter-colab" [style = dotted];
+  "ctmnt/swift-jupyter-scipy" -> "jupyter/tensorflow-notebook" [folded, dir=both, hstyle=generalization];
 
-  "Ubuntu 18.04" -> "jupyter/base-notebook";
+  "Google Colab" -> "ctmnt/swift-jupyter-colab" [folded, dir=both, hstyle=generalization];
+
   "jupyter/base-notebook" -> "jupyter/minimal-notebook";
   "jupyter/minimal-notebook" -> "jupyter/scipy-notebook";
   "jupyter/scipy-notebook" -> "jupyter/tensorflow-notebook";
-
-  "google/base-deps" -> "ctmnt/base-for-s4tf" [folded, dir=both, hstyle=generalization];
-  "google/swift-jupyter" -> "ctmnt/swift-jupyter" [folded, dir=both, hstyle=generalization];
-  "google/swift-jupyter-\\nkernel-gateway" -> "ctmnt/swift-jupyter-scipy" [folded, dir=both, hstyle=generalization];
-  "ctmnt/swift-jupyter-scipy" -> "jupyter/tensorflow-notebook" [folded, dir=both, hstyle=generalization];
 }
