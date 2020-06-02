@@ -37,7 +37,7 @@ kernel-gateway" [style = dashed];
     group {
       color = none;
 
-      "ctmnt/base-for-s4tf" [style = dotted];
+      "ctmnt/swift-jupyter-base" [style = dotted];
       "ctmnt/swift-jupyter" [style = dotted];
 
       group {
@@ -62,10 +62,10 @@ kernel-gateway" [style = dashed];
   "Ubuntu 18.04" -&gt; "jupyter/base-notebook";
 
   "nvidia/cuda" -&gt; "google/base-deps";
-  "nvidia/cuda" -&gt; "ctmnt/base-for-s4tf" [style = dotted];
+  "nvidia/cuda" -&gt; "ctmnt/swift-jupyter-base" [style = dotted];
 
   "google/base-deps" -&gt; "google/swift-jupyter";
-  "google/base-deps" -&gt; "ctmnt/base-for-s4tf" [folded, dir=both, hstyle=generalization];
+  "google/base-deps" -&gt; "ctmnt/swift-jupyter-base" [folded, dir=both, hstyle=generalization];
 
   "google/swift-jupyter" -&gt; "google/swift-jupyter-
 kernel-gateway" [style = dashed];
@@ -74,7 +74,7 @@ kernel-gateway" [style = dashed];
   "google/swift-jupyter-
 kernel-gateway" -&gt; "ctmnt/swift-jupyter-scipy" [folded, dir=both, hstyle=generalization];
 
-  "ctmnt/base-for-s4tf" -&gt; "ctmnt/swift-jupyter" [style = dotted];
+  "ctmnt/swift-jupyter-base" -&gt; "ctmnt/swift-jupyter" [style = dotted];
   "ctmnt/swift-jupyter" -&gt; "ctmnt/swift-jupyter-scipy" [style = dotted];
 
   "ctmnt/swift-jupyter-scipy" -&gt; "ctmnt/swift-jupyter-colab" [style = dotted];
@@ -128,7 +128,7 @@ kernel-gateway" -&gt; "ctmnt/swift-jupyter-scipy" [folded, dir=both, hstyle=gene
   <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="64" y="540" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="66" x="160.0" y="577">Google Colab</text>
   <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="2" width="192" x="320" y="240" />
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="105" x="416.5" y="276">ctmnt/base-for-s4tf</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="130" x="416.0" y="276">ctmnt/swift-jupyter-base</text>
   <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="2" width="192" x="320" y="340" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="101" x="416.5" y="376">ctmnt/swift-jupyter</text>
   <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="2" width="192" x="320" y="440" />

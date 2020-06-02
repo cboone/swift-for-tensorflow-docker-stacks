@@ -28,7 +28,7 @@ kernel-gateway" [style = dashed];
     group {
       color = none;
 
-      "ctmnt/base-for-s4tf" [style = dotted];
+      "ctmnt/swift-jupyter-base" [style = dotted];
       "ctmnt/swift-jupyter" [style = dotted];
 
       group {
@@ -53,10 +53,10 @@ kernel-gateway" [style = dashed];
   "Ubuntu 18.04" -> "jupyter/base-notebook";
 
   "nvidia/cuda" -> "google/base-deps";
-  "nvidia/cuda" -> "ctmnt/base-for-s4tf" [style = dotted];
+  "nvidia/cuda" -> "ctmnt/swift-jupyter-base" [style = dotted];
 
   "google/base-deps" -> "google/swift-jupyter";
-  "google/base-deps" -> "ctmnt/base-for-s4tf" [folded, dir=both, hstyle=generalization];
+  "google/base-deps" -> "ctmnt/swift-jupyter-base" [folded, dir=both, hstyle=generalization];
 
   "google/swift-jupyter" -> "google/swift-jupyter-
 kernel-gateway" [style = dashed];
@@ -65,7 +65,7 @@ kernel-gateway" [style = dashed];
   "google/swift-jupyter-
 kernel-gateway" -> "ctmnt/swift-jupyter-scipy" [folded, dir=both, hstyle=generalization];
 
-  "ctmnt/base-for-s4tf" -> "ctmnt/swift-jupyter" [style = dotted];
+  "ctmnt/swift-jupyter-base" -> "ctmnt/swift-jupyter" [style = dotted];
   "ctmnt/swift-jupyter" -> "ctmnt/swift-jupyter-scipy" [style = dotted];
 
   "ctmnt/swift-jupyter-scipy" -> "ctmnt/swift-jupyter-colab" [style = dotted];
