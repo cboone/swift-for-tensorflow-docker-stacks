@@ -17,7 +17,6 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
     && rm -rf /var/lib/apt/lists/*
 
 # Install some Python libraries that are useful to call from Swift
-WORKDIR /swift-jupyter
 RUN python3 -m pip install --upgrade pip \
     && python3 -m pip install --no-cache-dir \
         gym==0.17.2 \
