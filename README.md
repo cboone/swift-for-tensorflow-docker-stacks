@@ -38,6 +38,7 @@
 - Only root user
 - No self-signed HTTPS certificate
 - No passwordless `sudo`
+- None of the [common features](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html)
 
 ### swift-jupyter-scipy
 - Built from the swift-jupyter image
@@ -52,5 +53,5 @@
 To improve Docker image building, use the new [Docker Buildkit system](https://docs.docker.com/develop/develop-images/build_enhancements/#to-enable-buildkit-builds) by either setting the `DOCKER_BUILDKIT` environment variable or configuring the Docker `daemon.json`. The simplest way is by prepending `DOCKER_BUILDKIT=1` to your `docker build` command:
 
 ```bash
-DOCKER_BUILDKIT=1 docker build --file ./swift-jupyter-scipy/Dockerfile --tag "ctmnt/swift-jupyter-scipy" .
+DOCKER_BUILDKIT=1 docker build --file ./swift-jupyter-scipy/Dockerfile --tag ctmnt/swift-jupyter-scipy .
 ```
