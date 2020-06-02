@@ -54,7 +54,7 @@ RUN echo "/usr/local/cuda-${S4TF_CUDA_VERSION}/targets/x86_64-linux/lib/stubs" >
 # Copy local files as late as possible to avoid cache busting
 # Jupyter config needs to be copied here, as it's needed by
 # the swift-jupyter image but isn't in that image's build context
-COPY config/jupyter_notebook_config.py /etc/jupyter/
+COPY config/* /root/.jupyter/
 
 # Install and configure tini as the ENTRYPOINT
 ENV TINI_VERSION="v0.18.0"

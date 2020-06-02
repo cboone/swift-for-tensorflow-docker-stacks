@@ -1,6 +1,6 @@
 # ctmnt/swift-jupyter-base Docker image
 
-This is the base image upon which all the Swift for Tensorflow images are built. It should be functionally the same as [tensorflow/swift's base-deps Dockerfile](https://github.com/google/swift-jupyter/blob/master/docker/Dockerfile).
+This is the base image upon which all the Swift for Tensorflow images are built. It is (intended to be) functionally the same as [tensorflow/swift's base-deps Dockerfile](https://github.com/google/swift-jupyter/blob/master/docker/Dockerfile).
 
 For more information, see [the image details section on the main README](../README.md#image-details).
 

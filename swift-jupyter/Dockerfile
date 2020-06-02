@@ -24,6 +24,7 @@ RUN python3 -m pip install --upgrade pip \
         ipykernel==5.3.0 \
         jupyterhub==1.1.0 \
         jupyterlab==2.1.4 \
+        jupyter_kernel_gateway==2.4.0 \
         jupyter_kernel_test==0.3 \
         matplotlib==3.2.1 \
         notebook==6.0.3 \
@@ -47,4 +48,4 @@ WORKDIR /notebooks
 EXPOSE 8888
 
 # Run Jupyter on container start, using the tini ENTRYPOINT
-CMD ["jupyter", "lab"]
+CMD ["python3", "-m", "jupyter", "lab"]
