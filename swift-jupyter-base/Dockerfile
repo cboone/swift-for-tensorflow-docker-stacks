@@ -1,8 +1,8 @@
 # A Docker image with all dependencies required to run (not build) an S4TF toolchain.
 
 # Allow builder to specify CUDA versions
-ARG S4TF_CUDA_VERSION
-ARG S4TF_CUDNN_VERSION
+ARG S4TF_CUDA_VERSION=10.2
+ARG S4TF_CUDNN_VERSION=7
 
 # Start from nvidia/cuda base image
 FROM nvidia/cuda:${S4TF_CUDA_VERSION}-cudnn${S4TF_CUDNN_VERSION}-devel-ubuntu18.04
