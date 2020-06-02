@@ -1,5 +1,6 @@
 # Start from the Swift Jupyter base image
-FROM ctmnt/swift-jupyter-base
+ARG BASE_CONTAINER=ctmnt/swift-jupyter-base
+FROM $BASE_CONTAINER
 
 # Add Swift to the PATH
 ENV PATH="$PATH:/swift-tensorflow-toolchain/usr/bin/"
@@ -19,16 +20,16 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
 # Install some Python libraries that are useful to call from Swift
 RUN python3 -m pip install --upgrade pip \
     && python3 -m pip install --no-cache-dir \
-        gym==0.17.2 \
-        ipykernel==5.3.0 \
-        jupyterhub==1.1.0 \
-        jupyterlab==2.1.4 \
-        jupyter_kernel_gateway==2.4.0 \
-        jupyter_kernel_test==0.3 \
-        matplotlib==3.2.1 \
-        notebook==6.0.3 \
-        numpy==1.18.4 \
-        pandas==1.0.4 \
+        gym~=0.17.2 \
+        ipykernel~=5.3.0 \
+        jupyterhub~=1.1.0 \
+        jupyterlab~=2.1.4 \
+        jupyter_kernel_gateway~=2.4.0 \
+        jupyter_kernel_test~=0.3 \
+        matplotlib~=3.2.1 \
+        notebook~=6.0.3 \
+        numpy~=1.18.4 \
+        pandas~=1.0.4 \
     && jupyter lab build -y \
     && jupyter lab clean -y \
     && npm cache clean --force

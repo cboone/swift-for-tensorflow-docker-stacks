@@ -17,9 +17,11 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         build-essential \
+        bzip2 \
         ca-certificates \
         clang \
         curl \
+        fonts-liberation \
         git \
         libblocksruntime-dev \
         libbsd-dev \
@@ -29,6 +31,7 @@ RUN apt-get update \
         libpython-dev \
         libpython3-dev \
         libxml2 \
+        locales \
         python \
         python-dev \
         python-pip \
@@ -44,8 +47,15 @@ RUN apt-get update \
 # Install Python libraries
 RUN python3 -m pip install --upgrade pip \
     && python3 -m pip install --no-cache-dir \
-        junit-xml==1.9 \
-        psutil==5.7.0
+        junit-xml~=1.9 \
+        psutil~=5.7.0
+
+# Configure environment
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
+    locale-gen
+ENV LC_ALL=en_US.UTF-8 \
+    LANG=en_US.UTF-8 \
+    LANGUAGE=en_US.UTF-8
 
 # Configure CUDA
 RUN echo "/usr/local/cuda-${S4TF_CUDA_VERSION}/targets/x86_64-linux/lib/stubs" > /etc/ld.so.conf.d/cuda-${S4TF_CUDA_VERSION}-stubs.conf \
