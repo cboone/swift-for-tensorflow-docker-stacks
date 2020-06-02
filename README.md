@@ -30,23 +30,27 @@
 - No Python 2.7 integration
 - Node installed for better Jupyter Lab support
 - Preinstalled packages:
-  - gym, ipykernel, jupyterhub, jupyterlab, jupyter-kernel-test, notebook, matplotlib, numpy, pandas
+  - _pip:_ gym, ipykernel, jupyterhub, jupyterlab, jupyter-kernel-gateway, jupyter-kernel-test, notebook, matplotlib, numpy, pandas
 
 #### Compared to jupyter/base-notebook
 - No `start.sh`, `start-notebook.sh`, or `start-singleuser.sh`
 - No conda installation
 - Only root user
 - No self-signed HTTPS certificate
-- No passwordless `sudo`
+- No `sudo` (passwordless or otherwise)
 - None of the [common features](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html)
+- Many of the binary dependencies not installed
 
 ### swift-jupyter-scipy
 - Built from the swift-jupyter image
+- Comparable to the jupyter/tensorflow-notebook image (see below for differences)
 - Preinstalled packages:
-  - beautifulsoup, bokeh, bottleneck, cloudpickle, cython, dask, dill, hdf5, ipympl, ipywidgets, keras, numba, numexpr, matplotlib, pandas, patsy, protobuf, pytables, scikit-learn, scikit-image, scipy, seaborn, sqlalchemy, statsmodel, sympy, tensorflow, vincent, xlrd
+  - _pip:_ beautifulsoup, bokeh, bottleneck, cloudpickle, cython, dask, dill, h5py, ipywidgets, ipympl, keras, numba, numexpr, matplotlib, pandas, patsy, protobuf, scikit-image, scikit-learn, scipy, seaborn, sqlalchemy, statsmodels, sympy, tables (pytables), tensorflow, vincent, widgetsnbextensions, xlrd
+  - _apt-get:_ dvipng (for latex labels), emacs, ffmpeg (for matplotlib animation), hdf5, inkscape, jed, nano, netcat, openblas, python-dev, texlive, vim
 
 #### Compared to jupyer/scipy-notebook
 - No facets installation
+- Tensorflow installed
 
 ## Notes
 ### Docker Buildkit

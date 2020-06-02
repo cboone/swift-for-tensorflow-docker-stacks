@@ -11,85 +11,74 @@
   orientation = portrait;
   node_width = 192;
   node_height = 60;
+  default_group_color = none;
 
   group {
-    color = none;
-
-    "Ubuntu 18.04";
-    "nvidia/cuda";
+    "Ubuntu 18.04" [style = none];
+    "nvidia/cuda" [style = none];
 
     group {
-      color = none;
-
-      "google/base-deps";
-      "google/swift-jupyter";
-
+      orientation = portrait;
+      
       group {
-        color = none;
-
-        orientation = portrait;
-        "google/swift-jupyter-
-kernel-gateway" [style = dashed];
-        "Google Colab";
+        orientation=portrait;
+        
+        "google/base-deps" [style = none];
+        "google/swift-jupyter" [style = none];
+      }
+      
+      group {
+        "Google Colab" [style = none];
       }
     }
 
     group {
-      color = none;
-
-      "ctmnt/swift-jupyter-base" [style = dotted];
-      "ctmnt/swift-jupyter" [style = dotted];
+      "ctmnt/swift-jupyter-base";
+      "ctmnt/swift-jupyter";
 
       group {
-        color = none;
-
-        "ctmnt/swift-jupyter-scipy" [style = dotted];
-        "ctmnt/swift-jupyter-colab" [style = dotted];
+        "ctmnt/swift-jupyter-scipy";
+        "ctmnt/swift-jupyter-colab";
       }
     }
 
     group {
-      color = none;
-
-      "jupyter/base-notebook";
-      "jupyter/minimal-notebook";
-      "jupyter/scipy-notebook";
-      "jupyter/tensorflow-notebook";
+      "jupyter/base-notebook" [style = none];
+      "jupyter/minimal-notebook" [style = none];
+      "jupyter/scipy-notebook" [style = none];
+      "jupyter/tensorflow-notebook" [style = none];
     }
   }
 
-  "Ubuntu 18.04" -&gt; "nvidia/cuda";
-  "Ubuntu 18.04" -&gt; "jupyter/base-notebook";
+  "Ubuntu 18.04" -&gt; "nvidia/cuda" [hstyle = generalization];
+  "Ubuntu 18.04" -&gt; "jupyter/base-notebook" [hstyle = generalization];
 
-  "nvidia/cuda" -&gt; "google/base-deps";
-  "nvidia/cuda" -&gt; "ctmnt/swift-jupyter-base" [style = dotted];
+  "nvidia/cuda" -&gt; "google/base-deps" [hstyle = generalization];
+  "nvidia/cuda" -&gt; "ctmnt/swift-jupyter-base";
 
-  "google/base-deps" -&gt; "google/swift-jupyter";
-  "google/base-deps" -&gt; "ctmnt/swift-jupyter-base" [folded, dir=both, hstyle=generalization];
+  "google/base-deps" -&gt; "google/swift-jupyter" [hstyle=generalization];
+  "google/base-deps" -&gt; "ctmnt/swift-jupyter-base" [folded, dir = both, style = dotted];
 
-  "google/swift-jupyter" -&gt; "google/swift-jupyter-
-kernel-gateway" [style = dashed];
-  "google/swift-jupyter" -&gt; "ctmnt/swift-jupyter" [folded, dir=both, hstyle=generalization];
-
-  "google/swift-jupyter-
-kernel-gateway" -&gt; "ctmnt/swift-jupyter-scipy" [folded, dir=both, hstyle=generalization];
+  "google/swift-jupyter" -&gt; "ctmnt/swift-jupyter" [folded, dir = both, style = dotted];
 
   "ctmnt/swift-jupyter-base" -&gt; "ctmnt/swift-jupyter" [style = dotted];
   "ctmnt/swift-jupyter" -&gt; "ctmnt/swift-jupyter-scipy" [style = dotted];
 
   "ctmnt/swift-jupyter-scipy" -&gt; "ctmnt/swift-jupyter-colab" [style = dotted];
-  "ctmnt/swift-jupyter-scipy" -&gt; "jupyter/tensorflow-notebook" [folded, dir=both, hstyle=generalization];
+  "ctmnt/swift-jupyter-scipy" -&gt; "jupyter/tensorflow-notebook" [folded, dir = both, style = dotted];
 
-  "Google Colab" -&gt; "ctmnt/swift-jupyter-colab" [folded, dir=both, hstyle=generalization];
+  "Google Colab" -&gt; "ctmnt/swift-jupyter-colab" [folded, dir=both, style = dotted];
 
-  "jupyter/base-notebook" -&gt; "jupyter/minimal-notebook";
-  "jupyter/minimal-notebook" -&gt; "jupyter/scipy-notebook";
-  "jupyter/scipy-notebook" -&gt; "jupyter/tensorflow-notebook";
-}</desc>
+  "jupyter/base-notebook" -&gt; "jupyter/minimal-notebook" [hstyle=generalization];
+  "jupyter/minimal-notebook" -&gt; "jupyter/scipy-notebook" [hstyle=generalization];
+  "jupyter/scipy-notebook" -&gt; "jupyter/tensorflow-notebook" [hstyle=generalization];
+}
+</desc>
   <rect fill="none" height="580" style="filter:url(#filter_blur)" width="720" x="56" y="30" />
   <rect fill="none" height="380" style="filter:url(#filter_blur)" width="208" x="568" y="130" />
-  <rect fill="none" height="380" style="filter:url(#filter_blur)" width="208" x="56" y="230" />
-  <rect fill="none" height="180" style="filter:url(#filter_blur)" width="208" x="56" y="430" />
+  <rect fill="none" height="280" style="filter:url(#filter_blur)" width="208" x="56" y="230" />
+  <rect fill="none" height="180" style="filter:url(#filter_blur)" width="208" x="56" y="230" />
+  <rect fill="none" height="80" style="filter:url(#filter_blur)" width="208" x="56" y="430" />
   <rect fill="none" height="380" style="filter:url(#filter_blur)" width="208" x="312" y="230" />
   <rect fill="none" height="180" style="filter:url(#filter_blur)" width="208" x="312" y="430" />
   <rect fill="rgb(0,0,0)" height="60" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="67" y="46" />
@@ -101,134 +90,138 @@ kernel-gateway" -&gt; "ctmnt/swift-jupyter-scipy" [folded, dir=both, hstyle=gene
   <rect fill="rgb(0,0,0)" height="60" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="67" y="246" />
   <rect fill="rgb(0,0,0)" height="60" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="67" y="346" />
   <rect fill="rgb(0,0,0)" height="60" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="67" y="446" />
-  <rect fill="rgb(0,0,0)" height="60" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="67" y="546" />
   <rect fill="rgb(0,0,0)" height="60" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="323" y="246" />
   <rect fill="rgb(0,0,0)" height="60" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="323" y="346" />
   <rect fill="rgb(0,0,0)" height="60" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="323" y="446" />
   <rect fill="rgb(0,0,0)" height="60" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="192" x="323" y="546" />
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="64" y="40" />
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="192" x="64" y="40" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="72" x="160.0" y="75">Ubuntu 18.04</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="64" y="140" />
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="192" x="64" y="140" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="58" x="160.0" y="176">nvidia/cuda</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="576" y="140" />
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="192" x="576" y="140" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="116" x="672.0" y="176">jupyter/base-notebook</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="576" y="240" />
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="192" x="576" y="240" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="131" x="672.5" y="276">jupyter/minimal-notebook</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="576" y="340" />
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="192" x="576" y="340" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="118" x="672.0" y="376">jupyter/scipy-notebook</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="576" y="440" />
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="192" x="576" y="440" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="145" x="672.5" y="476">jupyter/tensorflow-notebook</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="64" y="240" />
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="192" x="64" y="240" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="91" x="160.5" y="276">google/base-deps</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="64" y="340" />
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="192" x="64" y="340" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="103" x="160.5" y="377">google/swift-jupyter</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="4" width="192" x="64" y="440" />
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="109" x="160.5" y="470">google/swift-jupyter-</text>
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="79" x="160.5" y="484">kernel-gateway</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="64" y="540" />
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="66" x="160.0" y="577">Google Colab</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="2" width="192" x="320" y="240" />
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="0 65535" width="192" x="64" y="440" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="66" x="160.0" y="477">Google Colab</text>
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="320" y="240" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="130" x="416.0" y="276">ctmnt/swift-jupyter-base</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="2" width="192" x="320" y="340" />
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="320" y="340" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="101" x="416.5" y="376">ctmnt/swift-jupyter</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="2" width="192" x="320" y="440" />
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="320" y="440" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="132" x="416.0" y="476">ctmnt/swift-jupyter-scipy</text>
-  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" stroke-dasharray="2" width="192" x="320" y="540" />
+  <rect fill="rgb(255,255,255)" height="60" stroke="rgb(0,0,0)" width="192" x="320" y="540" />
   <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="133" x="416.5" y="576">ctmnt/swift-jupyter-colab</text>
   <path d="M 160 100 L 160 132" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="160,139 156,132 164,132 160,139" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="160,139 156,132 164,132 160,139" stroke="rgb(0,0,0)" />
   <path d="M 160 100 L 160 120" fill="none" stroke="rgb(0,0,0)" />
   <path d="M 160 120 L 672 120" fill="none" stroke="rgb(0,0,0)" />
   <path d="M 672 120 L 672 132" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="672,139 668,132 676,132 672,139" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="672,139 668,132 676,132 672,139" stroke="rgb(0,0,0)" />
   <path d="M 160 200 L 160 232" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="160,239 156,232 164,232 160,239" stroke="rgb(0,0,0)" />
-  <path d="M 160 200 L 160 220" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
-  <path d="M 160 220 L 416 220" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
-  <path d="M 416 220 L 416 232" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="white" points="160,239 156,232 164,232 160,239" stroke="rgb(0,0,0)" />
+  <path d="M 160 200 L 160 220" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 160 220 L 416 220" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 416 220 L 416 232" fill="none" stroke="rgb(0,0,0)" />
   <polygon fill="rgb(0,0,0)" points="416,239 412,232 420,232 416,239" stroke="rgb(0,0,0)" />
   <path d="M 672 200 L 672 232" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="672,239 668,232 676,232 672,239" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="672,239 668,232 676,232 672,239" stroke="rgb(0,0,0)" />
   <path d="M 672 300 L 672 332" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="672,339 668,332 676,332 672,339" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="672,339 668,332 676,332 672,339" stroke="rgb(0,0,0)" />
   <path d="M 672 400 L 672 432" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="672,439 668,432 676,432 672,439" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="672,439 668,432 676,432 672,439" stroke="rgb(0,0,0)" />
   <path d="M 160 300 L 160 332" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="160,339 156,332 164,332 160,339" stroke="rgb(0,0,0)" />
-  <path d="M 264 270 L 312 270" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="257,270 264,266 264,274 257,270" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="319,270 312,266 312,274 319,270" stroke="rgb(0,0,0)" />
-  <path d="M 160 400 L 160 432" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
-  <polygon fill="rgb(0,0,0)" points="160,439 156,432 164,432 160,439" stroke="rgb(0,0,0)" />
-  <path d="M 264 370 L 312 370" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="257,370 264,366 264,374 257,370" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="319,370 312,366 312,374 319,370" stroke="rgb(0,0,0)" />
-  <path d="M 264 470 L 312 470" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="257,470 264,466 264,474 257,470" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="319,470 312,466 312,474 319,470" stroke="rgb(0,0,0)" />
-  <path d="M 264 570 L 312 570" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="257,570 264,566 264,574 257,570" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="319,570 312,566 312,574 319,570" stroke="rgb(0,0,0)" />
-  <path d="M 264 470 L 312 470" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="257,470 264,466 264,474 257,470" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="319,470 312,466 312,474 319,470" stroke="rgb(0,0,0)" />
-  <path d="M 264 570 L 312 570" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="257,570 264,566 264,574 257,570" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="319,570 312,566 312,574 319,570" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="160,339 156,332 164,332 160,339" stroke="rgb(0,0,0)" />
+  <path d="M 264 270 L 312 270" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="257,270 264,266 264,274 257,270" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="319,270 312,266 312,274 319,270" stroke="rgb(0,0,0)" />
+  <path d="M 264 370 L 312 370" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="257,370 264,366 264,374 257,370" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="319,370 312,366 312,374 319,370" stroke="rgb(0,0,0)" />
+  <path d="M 264 470 L 288 470" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 288 470 L 288 570" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 288 570 L 312 570" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="257,470 264,466 264,474 257,470" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="319,570 312,566 312,574 319,570" stroke="rgb(0,0,0)" />
+  <path d="M 160 300 L 160 332" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="160,339 156,332 164,332 160,339" stroke="rgb(0,0,0)" />
+  <path d="M 264 270 L 312 270" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="257,270 264,266 264,274 257,270" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="319,270 312,266 312,274 319,270" stroke="rgb(0,0,0)" />
+  <path d="M 264 370 L 312 370" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="257,370 264,366 264,374 257,370" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="319,370 312,366 312,374 319,370" stroke="rgb(0,0,0)" />
+  <path d="M 264 470 L 288 470" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 288 470 L 288 570" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 288 570 L 312 570" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="257,470 264,466 264,474 257,470" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="319,570 312,566 312,574 319,570" stroke="rgb(0,0,0)" />
   <path d="M 416 300 L 416 332" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
   <polygon fill="rgb(0,0,0)" points="416,339 412,332 420,332 416,339" stroke="rgb(0,0,0)" />
   <path d="M 416 400 L 416 432" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
   <polygon fill="rgb(0,0,0)" points="416,439 412,432 420,432 416,439" stroke="rgb(0,0,0)" />
   <path d="M 416 500 L 416 532" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
   <polygon fill="rgb(0,0,0)" points="416,539 412,532 420,532 416,539" stroke="rgb(0,0,0)" />
-  <path d="M 520 470 L 568 470" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="513,470 520,466 520,474 513,470" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="575,470 568,466 568,474 575,470" stroke="rgb(0,0,0)" />
+  <path d="M 520 470 L 568 470" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="513,470 520,466 520,474 513,470" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="575,470 568,466 568,474 575,470" stroke="rgb(0,0,0)" />
   <path d="M 416 500 L 416 532" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
   <polygon fill="rgb(0,0,0)" points="416,539 412,532 420,532 416,539" stroke="rgb(0,0,0)" />
-  <path d="M 520 470 L 568 470" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="513,470 520,466 520,474 513,470" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="575,470 568,466 568,474 575,470" stroke="rgb(0,0,0)" />
+  <path d="M 520 470 L 568 470" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="513,470 520,466 520,474 513,470" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="575,470 568,466 568,474 575,470" stroke="rgb(0,0,0)" />
   <path d="M 672 200 L 672 232" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="672,239 668,232 676,232 672,239" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="672,239 668,232 676,232 672,239" stroke="rgb(0,0,0)" />
   <path d="M 672 300 L 672 332" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="672,339 668,332 676,332 672,339" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="672,339 668,332 676,332 672,339" stroke="rgb(0,0,0)" />
   <path d="M 672 400 L 672 432" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="672,439 668,432 676,432 672,439" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="672,439 668,432 676,432 672,439" stroke="rgb(0,0,0)" />
   <path d="M 160 300 L 160 332" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="rgb(0,0,0)" points="160,339 156,332 164,332 160,339" stroke="rgb(0,0,0)" />
-  <path d="M 264 270 L 312 270" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="257,270 264,266 264,274 257,270" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="319,270 312,266 312,274 319,270" stroke="rgb(0,0,0)" />
-  <path d="M 160 400 L 160 432" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
-  <polygon fill="rgb(0,0,0)" points="160,439 156,432 164,432 160,439" stroke="rgb(0,0,0)" />
-  <path d="M 264 370 L 312 370" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="257,370 264,366 264,374 257,370" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="319,370 312,366 312,374 319,370" stroke="rgb(0,0,0)" />
-  <path d="M 264 470 L 312 470" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="257,470 264,466 264,474 257,470" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="319,470 312,466 312,474 319,470" stroke="rgb(0,0,0)" />
-  <path d="M 264 570 L 312 570" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="257,570 264,566 264,574 257,570" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="319,570 312,566 312,574 319,570" stroke="rgb(0,0,0)" />
-  <path d="M 264 470 L 312 470" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="257,470 264,466 264,474 257,470" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="319,470 312,466 312,474 319,470" stroke="rgb(0,0,0)" />
-  <path d="M 264 570 L 312 570" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="257,570 264,566 264,574 257,570" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="319,570 312,566 312,574 319,570" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="160,339 156,332 164,332 160,339" stroke="rgb(0,0,0)" />
+  <path d="M 264 270 L 312 270" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="257,270 264,266 264,274 257,270" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="319,270 312,266 312,274 319,270" stroke="rgb(0,0,0)" />
+  <path d="M 264 370 L 312 370" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="257,370 264,366 264,374 257,370" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="319,370 312,366 312,374 319,370" stroke="rgb(0,0,0)" />
+  <path d="M 264 470 L 288 470" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 288 470 L 288 570" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 288 570 L 312 570" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="257,470 264,466 264,474 257,470" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="319,570 312,566 312,574 319,570" stroke="rgb(0,0,0)" />
+  <path d="M 160 300 L 160 332" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="white" points="160,339 156,332 164,332 160,339" stroke="rgb(0,0,0)" />
+  <path d="M 264 270 L 312 270" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="257,270 264,266 264,274 257,270" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="319,270 312,266 312,274 319,270" stroke="rgb(0,0,0)" />
+  <path d="M 264 370 L 312 370" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="257,370 264,366 264,374 257,370" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="319,370 312,366 312,374 319,370" stroke="rgb(0,0,0)" />
+  <path d="M 264 470 L 288 470" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 288 470 L 288 570" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <path d="M 288 570 L 312 570" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="257,470 264,466 264,474 257,470" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="319,570 312,566 312,574 319,570" stroke="rgb(0,0,0)" />
   <path d="M 416 300 L 416 332" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
   <polygon fill="rgb(0,0,0)" points="416,339 412,332 420,332 416,339" stroke="rgb(0,0,0)" />
   <path d="M 416 400 L 416 432" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
   <polygon fill="rgb(0,0,0)" points="416,439 412,432 420,432 416,439" stroke="rgb(0,0,0)" />
   <path d="M 416 500 L 416 532" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
   <polygon fill="rgb(0,0,0)" points="416,539 412,532 420,532 416,539" stroke="rgb(0,0,0)" />
-  <path d="M 520 470 L 568 470" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="513,470 520,466 520,474 513,470" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="575,470 568,466 568,474 575,470" stroke="rgb(0,0,0)" />
+  <path d="M 520 470 L 568 470" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="513,470 520,466 520,474 513,470" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="575,470 568,466 568,474 575,470" stroke="rgb(0,0,0)" />
   <path d="M 416 500 L 416 532" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
   <polygon fill="rgb(0,0,0)" points="416,539 412,532 420,532 416,539" stroke="rgb(0,0,0)" />
-  <path d="M 520 470 L 568 470" fill="none" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="513,470 520,466 520,474 513,470" stroke="rgb(0,0,0)" />
-  <polygon fill="white" points="575,470 568,466 568,474 575,470" stroke="rgb(0,0,0)" />
+  <path d="M 520 470 L 568 470" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="2" />
+  <polygon fill="rgb(0,0,0)" points="513,470 520,466 520,474 513,470" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="575,470 568,466 568,474 575,470" stroke="rgb(0,0,0)" />
 </svg>

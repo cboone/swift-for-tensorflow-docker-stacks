@@ -2,78 +2,65 @@ blockdiag {
   orientation = portrait;
   node_width = 192;
   node_height = 60;
+  default_group_color = none;
 
   group {
-    color = none;
-
-    "Ubuntu 18.04";
-    "nvidia/cuda";
+    "Ubuntu 18.04" [style = none];
+    "nvidia/cuda" [style = none];
 
     group {
-      color = none;
-
-      "google/base-deps";
-      "google/swift-jupyter";
-
+      orientation = portrait;
+      
       group {
-        color = none;
-
-        orientation = portrait;
-        "google/swift-jupyter-
-kernel-gateway" [style = dashed];
-        "Google Colab";
+        orientation=portrait;
+        
+        "google/base-deps" [style = none];
+        "google/swift-jupyter" [style = none];
+      }
+      
+      group {
+        "Google Colab" [style = none];
       }
     }
 
     group {
-      color = none;
-
-      "ctmnt/swift-jupyter-base" [style = dotted];
-      "ctmnt/swift-jupyter" [style = dotted];
+      "ctmnt/swift-jupyter-base";
+      "ctmnt/swift-jupyter";
 
       group {
-        color = none;
-
-        "ctmnt/swift-jupyter-scipy" [style = dotted];
-        "ctmnt/swift-jupyter-colab" [style = dotted];
+        "ctmnt/swift-jupyter-scipy";
+        "ctmnt/swift-jupyter-colab";
       }
     }
 
     group {
-      color = none;
-
-      "jupyter/base-notebook";
-      "jupyter/minimal-notebook";
-      "jupyter/scipy-notebook";
-      "jupyter/tensorflow-notebook";
+      "jupyter/base-notebook" [style = none];
+      "jupyter/minimal-notebook" [style = none];
+      "jupyter/scipy-notebook" [style = none];
+      "jupyter/tensorflow-notebook" [style = none];
     }
   }
 
-  "Ubuntu 18.04" -> "nvidia/cuda";
-  "Ubuntu 18.04" -> "jupyter/base-notebook";
+  "Ubuntu 18.04" -> "nvidia/cuda" [hstyle = generalization];
+  "Ubuntu 18.04" -> "jupyter/base-notebook" [hstyle = generalization];
 
-  "nvidia/cuda" -> "google/base-deps";
-  "nvidia/cuda" -> "ctmnt/swift-jupyter-base" [style = dotted];
+  "nvidia/cuda" -> "google/base-deps" [hstyle = generalization];
+  "nvidia/cuda" -> "ctmnt/swift-jupyter-base";
 
-  "google/base-deps" -> "google/swift-jupyter";
-  "google/base-deps" -> "ctmnt/swift-jupyter-base" [folded, dir=both, hstyle=generalization];
+  "google/base-deps" -> "google/swift-jupyter" [hstyle=generalization];
+  "google/base-deps" -> "ctmnt/swift-jupyter-base" [folded, dir = both, style = dotted];
 
-  "google/swift-jupyter" -> "google/swift-jupyter-
-kernel-gateway" [style = dashed];
-  "google/swift-jupyter" -> "ctmnt/swift-jupyter" [folded, dir=both, hstyle=generalization];
-
-  "google/swift-jupyter-
-kernel-gateway" -> "ctmnt/swift-jupyter-scipy" [folded, dir=both, hstyle=generalization];
+  "google/swift-jupyter" -> "ctmnt/swift-jupyter" [folded, dir = both, style = dotted];
 
   "ctmnt/swift-jupyter-base" -> "ctmnt/swift-jupyter" [style = dotted];
   "ctmnt/swift-jupyter" -> "ctmnt/swift-jupyter-scipy" [style = dotted];
 
   "ctmnt/swift-jupyter-scipy" -> "ctmnt/swift-jupyter-colab" [style = dotted];
-  "ctmnt/swift-jupyter-scipy" -> "jupyter/tensorflow-notebook" [folded, dir=both, hstyle=generalization];
+  "ctmnt/swift-jupyter-scipy" -> "jupyter/tensorflow-notebook" [folded, dir = both, style = dotted];
 
-  "Google Colab" -> "ctmnt/swift-jupyter-colab" [folded, dir=both, hstyle=generalization];
+  "Google Colab" -> "ctmnt/swift-jupyter-colab" [folded, dir=both, style = dotted];
 
-  "jupyter/base-notebook" -> "jupyter/minimal-notebook";
-  "jupyter/minimal-notebook" -> "jupyter/scipy-notebook";
-  "jupyter/scipy-notebook" -> "jupyter/tensorflow-notebook";
+  "jupyter/base-notebook" -> "jupyter/minimal-notebook" [hstyle=generalization];
+  "jupyter/minimal-notebook" -> "jupyter/scipy-notebook" [hstyle=generalization];
+  "jupyter/scipy-notebook" -> "jupyter/tensorflow-notebook" [hstyle=generalization];
 }
