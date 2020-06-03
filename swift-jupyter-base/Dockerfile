@@ -74,3 +74,5 @@ ENTRYPOINT ["/tini", "-g", "--"]
 
 # Use bash as the default command
 CMD ["/bin/bash"]
+
+LABEL maintainer="Christopher Boone <catamountsw@gmail.com>"
